@@ -2,31 +2,26 @@ import java.util.ArrayList;
 
 public class Game_Board {
 
-    // *************
-    // *Composition*
-    // *************
-    
-    Row row;
-
     // ************
     // *Attributes*
     // ************
     
     ArrayList<Row> map = new ArrayList<Row>();
 
-    public Game_Board(){
-        this.row = new Row();
-        // Game_Board has rows
-    }
 
     public void Initialize_Empty_Board(int length, int width){
         // Setting 'y axis' by adding row objects to map list
 
-        row.Add_Coloumns(width);
         
         for (int a = 0; a < length; ++a){
-            map.add(row);
-            // Add map object until requested length is reached
+            // 1.  Create new row instance
+            // 2.  Fill coloumns of row with 0
+            // 3.  Add row to map
+            // 4.  Create NEW object in next iteration
+
+            Row new_row = new Row();
+            new_row.Add_Coloumns(width);
+            map.add(new_row);
         }
     }
 }
