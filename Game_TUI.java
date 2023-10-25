@@ -15,9 +15,19 @@ import java.util.ArrayList;
 //                 3) 5 for hard difficulty
 
 public class Game_TUI {
+
+    // *************
+    // *Composition*
+    // *************
+    
+    Game_Board game_board;
+    Player_List player_list;
+
+    // ************
+    // *Attributes*
+    // ************
+
     String game_name;
-    // Game_Board game_board;
-    // Player_List player_list;
     String welcome_ENG;
     String welcome_GER;
     String instruction_ENG;
@@ -26,6 +36,14 @@ public class Game_TUI {
     int difficulty;
     
     public Game_TUI(){
+
+    // *************
+    // *Composition*
+    // *************
+
+    this.game_board = new Game_Board();
+    this.player_list = new Player_List();
+
         game_name = "4 Gewinnt";
 
         // **********************
