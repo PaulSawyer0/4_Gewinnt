@@ -37,21 +37,16 @@ public class Game_TUI {
     
     public Game_TUI(){
 
-    // *************
-    // *Composition*
-    // *************
-
-    this.game_board = new Game_Board();
-    this.player_list = new Player_List();
-
-        game_name = "4 Gewinnt";
-
         // **********************
         // *Initiate composition*
         // **********************
 
-        // this.game_board = new Game_Board();
-        // this.player_list = new Player_List();
+        this.game_board = new Game_Board();
+        this.player_list = new Player_List();
+
+        game_name = "4 Gewinnt";
+
+
 
         welcome_ENG = """
 +--------------------+
@@ -140,7 +135,7 @@ Gebe gewuenschten Schwierigkeitsgrad an.
         //*Logical Input Test = LIT*
         //**************************
 
-        //Calling Logical_Input_Test with a certain target in
+        //Calling Logical_Input_Test with a certain target int
         //==>Raw input handled by Console_Inquiry
         //==>Logical input test handled by  LIT
         return player_count;

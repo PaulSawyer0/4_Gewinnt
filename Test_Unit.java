@@ -3,7 +3,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.Assert;
 
 // +=========+
 // |Unit Test|
