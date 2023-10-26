@@ -9,7 +9,10 @@ public class Player_List {
     public void Generate_Player_List(int p_count){
         for (int a = 0; a < p_count; ++a){
             Player new_Player = new Player();
+            // Generate new player instance for each player
+
             player_list.add(new_Player);
+            // Add player instance to list
         }
     }
 }
