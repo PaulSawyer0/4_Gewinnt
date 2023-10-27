@@ -28,4 +28,40 @@ public class Game_Board {
             map.add(new_row);
         }
     }
+
+    public void Print_Coloumn_Header(int width){
+
+        for (int a = 1; a <= width; ++a){
+            if (a < width){
+                System.out.print("| " + a  + " ");
+                // Print first - second to last coloumn
+            }
+
+            else if (a == width) {
+                System.out.print("| " + a + " |");
+                // Print last coloumn
+            }
+
+        }
+    }
+
+    public void Print_Row_Coloumn(Game_TUI game_TUI){
+
+        for (Row row : game_TUI.game_board.map){
+            int index = 0;
+            System.out.println();
+            for (int coloumn : row.coloumns){
+                ++index;
+                // index of coloumns list
+
+                if (index < row.coloumns.size()){
+                    System.out.print("| " + coloumn + " ");
+                }
+
+                else if (index == row.coloumns.size()){
+                    System.out.print("| " + coloumn + " |");
+                }
+            }
+        }
+    }
 }

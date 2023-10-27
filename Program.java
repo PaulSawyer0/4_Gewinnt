@@ -21,6 +21,9 @@ public class Program {
         System.out.println(game_TUI.player_list.player_list.get(0));
         System.out.println(game_TUI.player_list.player_list.get(1));
         System.out.println(game_TUI.player_list.player_list.size());
+
+        game_TUI.game_board.Print_Coloumn_Header(3);
+        game_TUI.game_board.Print_Row_Coloumn(game_TUI);
         
     }
     
