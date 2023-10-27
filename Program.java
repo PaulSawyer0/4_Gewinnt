@@ -1,4 +1,5 @@
 public class Program {
+    // Field testing
     public static void main(String[] args){
         Game_TUI game_TUI = new Game_TUI();
         game_TUI.game_board.Initialize_Empty_Board(3, 3);
@@ -22,7 +23,8 @@ public class Program {
         System.out.println(game_TUI.player_list.player_list.get(1));
         System.out.println(game_TUI.player_list.player_list.size());
 
-        game_TUI.game_board.input.Choose_Coloumn(game_TUI, 3);
+        int target = game_TUI.game_board.input.Choose_Coloumn(game_TUI, 3);
+        game_TUI.game_board.input.Update_Map(game_TUI, target, 2);
         game_TUI.game_board.Print_Coloumn_Header(3);
         game_TUI.game_board.Print_Row_Coloumn(game_TUI);
 

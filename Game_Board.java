@@ -61,12 +61,15 @@ public class Game_Board {
 
                 if (index < row.coloumns.size()){
                     System.out.print("| " + coloumn + " ");
+                    // Print first - second to last coloumn
                 }
 
                 else if (index == row.coloumns.size()){
                     System.out.print("| " + coloumn + " |");
+                    // Print last coloumn
                 }
             }
         }
     }
+
 }
