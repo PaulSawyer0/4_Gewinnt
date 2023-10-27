@@ -32,6 +32,10 @@ public class Game_TUI {
     String welcome_GER;
     String instruction_ENG;
     String instruction_GER;
+    String take_turn_ENG;
+    String take_turn_DE;
+    String anncounce_winner_ENG;
+    String anncounce_winner_DE;
     int lang_int;
     int difficulty;
     
@@ -93,6 +97,27 @@ Enter desired difficulty.
 6.  Falls keine freien Plaetze mehr im Spielbrett uebrig sein, endet das Spiel in unentschieden.  \n
 Gebe gewuenschten Schwierigkeitsgrad an.
                 """;       
+
+        take_turn_ENG = """
++--------+
+|New turn|
++--------+\n
+Current player: """;
+
+        take_turn_DE = """
++---------+
+|Neuer Zug|
++---------+\n
+Momentaner Spieler: """;
+
+        anncounce_winner_ENG = """
+We have a winner!\n
+It's player: """;
+
+        anncounce_winner_DE = """
+Wir haben einen Gewinner!\n
+Es ist Spieler: """;
+
     }
 
     public int Inquire_Console_Input(){
