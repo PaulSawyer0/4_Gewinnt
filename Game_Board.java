@@ -7,6 +7,12 @@ public class Game_Board {
     // ************
     
     ArrayList<Row> map = new ArrayList<Row>();
+    Comparison comp;
+
+    public Game_Board(){
+        this.comp = new Comparison();
+        //Game board has comparison
+    }
 
     public void Initialize_Empty_Board(int length, int width){
         // Setting 'y axis' by adding row objects to map list
