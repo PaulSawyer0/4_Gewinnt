@@ -50,8 +50,6 @@ public class Game_TUI {
 
         game_name = "4 Gewinnt";
 
-
-
         welcome_ENG = """
 +--------------------+
 |Welcome to 4 Connect|
@@ -132,12 +130,12 @@ Es ist Spieler: """;
         return in;
     }
 
-    public int Logical_Input_Test(int target_int){
+    public int Logical_Input_Test(int target_max){
         int int_result = -1;
         //method gets called several times, setting the default result to -1 prevents logical errors
         //f.e. user can't choose negative amount of players, game mode
         try{
-           if (int_result < target_int){
+           if (int_result > target_max || int_result < 0){
                 int_result = Inquire_Console_Input();
             }
         }
@@ -174,9 +172,9 @@ Es ist Spieler: """;
         target_range.add(0,5);
         //game modes are defined by us
 
-        int difficulty = Logical_Input_Test(0);
+        int difficulty = Logical_Input_Test(5);
         while (target_range.contains(difficulty) != true){
-            difficulty = Logical_Input_Test(0);
+            difficulty = Logical_Input_Test(5);
         }
         //check if chosen difficulty exists, repeat Input if incorrect
         return difficulty;
@@ -199,10 +197,10 @@ Es ist Spieler: """;
         }
         //Print available languages
 
-        int lang_int = Logical_Input_Test(0);
+        int lang_int = Logical_Input_Test(2);
         lang_codes.listIterator(i);
         while (lang_int - 1 > i){
-            lang_int = Logical_Input_Test(0);
+            lang_int = Logical_Input_Test(2);
         }
         // Get chosen language and make sure it's in range
 

@@ -7,11 +7,17 @@ public class Game_Board {
     // ************
     
     ArrayList<Row> map = new ArrayList<Row>();
+    
+    // *************
+    // *Composition*
+    // *************
+
     Comparison comp;
+    Input input;
 
     public Game_Board(){
         this.comp = new Comparison();
-        //Game board has comparison
+        this.input = new Input();
     }
 
     public void Initialize_Empty_Board(int length, int width){
@@ -41,7 +47,6 @@ public class Game_Board {
                 System.out.print("| " + a + " |");
                 // Print last coloumn
             }
-
         }
     }
 
