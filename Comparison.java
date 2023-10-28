@@ -72,18 +72,42 @@ public class Comparison {
         int match_tracker = 0;
         try{
             for (int i = 0; i < win_condition; ++i){
-                if (Comp_Down(game_tui, player_num, win_condition, row, coloumn, i)     == true ||
-                Comp_Left(game_tui, player_num, win_condition, row, coloumn, i)         == true ||
-                Comp_Right(game_tui, player_num, win_condition, row, coloumn, i)        == true ||
-                Comp_Lower_Left(game_tui, player_num, win_condition, row, coloumn, i)   == true ||
-                Comp_Lower_Right(game_tui, player_num, win_condition, row, coloumn, i)  == true ||
-                Comp_Upper_Left(game_tui, player_num, win_condition, row, coloumn, i)   == true ||
-                Comp_Upper_Right(game_tui, player_num, win_condition, row, coloumn, i)  == true ){
-                    // check if one of the 7 comparisons was successful
-                    // increment tracker if true
+                // if (Comp_Down(game_tui, player_num, win_condition, row, coloumn, i)         == true){
+                //     ++match_tracker;
+                // }
+
+                if(Comp_Left(game_tui, player_num, win_condition, row, coloumn, i)         == true){
                     ++match_tracker;
                 }
+                 
+                else if(Comp_Right(game_tui, player_num, win_condition, row, coloumn, i)        == true){
+                    ++match_tracker;
+                }
+                
+                else if(Comp_Lower_Left(game_tui, player_num, win_condition, row, coloumn, i)   == true){
+                    ++match_tracker;
+                }
+                
+                else if(Comp_Lower_Right(game_tui, player_num, win_condition, row, coloumn, i)  == true){
+                    ++match_tracker;
+                }
+                
+                else if(Comp_Upper_Left(game_tui, player_num, win_condition, row, coloumn, i)   == true){
+                    ++match_tracker;
+                }
+                
+                else if(Comp_Upper_Right(game_tui, player_num, win_condition, row, coloumn, i)  == true){
+                    ++match_tracker;
+                }
+                    // check if one of the 7 comparisons was successful
+                    // increment tracker if true
             }
+
+            // Why so many if statements?
+            // Working with "OR"/"||" operators didnt' fucking work
+            // I don't know why, I don't care to find out either
+            // It's 1 in the morning
+            // I need a smoke
             
             Match_Tracker_Test(match_tracker, win_condition);
             //  if successful match was achieved
