@@ -15,25 +15,40 @@ import java.util.ArrayList;
 //                 3) 5 for hard difficulty
 
 public class Game_TUI {
+
+    // *************
+    // *Composition*
+    // *************
+    
+    Game_Board game_board;
+    Player_List player_list;
+
+    // ************
+    // *Attributes*
+    // ************
+
     String game_name;
-    // Game_Board game_board;
-    // Player_List player_list;
     String welcome_ENG;
     String welcome_GER;
     String instruction_ENG;
     String instruction_GER;
+    String take_turn_ENG;
+    String take_turn_DE;
+    String anncounce_winner_ENG;
+    String anncounce_winner_DE;
     int lang_int;
     int difficulty;
     
     public Game_TUI(){
-        game_name = "4 Gewinnt";
 
         // **********************
         // *Initiate composition*
         // **********************
 
-        // this.game_board = new Game_Board();
-        // this.player_list = new Player_List();
+        this.game_board = new Game_Board();
+        this.player_list = new Player_List();
+
+        game_name = "4 Gewinnt";
 
         welcome_ENG = """
 +--------------------+
@@ -80,6 +95,27 @@ Enter desired difficulty.
 6.  Falls keine freien Plaetze mehr im Spielbrett uebrig sein, endet das Spiel in unentschieden.  \n
 Gebe gewuenschten Schwierigkeitsgrad an.
                 """;       
+
+        take_turn_ENG = """
++--------+
+|New turn|
++--------+\n
+Current player: """;
+
+        take_turn_DE = """
++---------+
+|Neuer Zug|
++---------+\n
+Momentaner Spieler: """;
+
+        anncounce_winner_ENG = """
+We have a winner!\n
+It's player: """;
+
+        anncounce_winner_DE = """
+Wir haben einen Gewinner!\n
+Es ist Spieler: """;
+
     }
 
     public int Inquire_Console_Input(){
@@ -94,12 +130,12 @@ Gebe gewuenschten Schwierigkeitsgrad an.
         return in;
     }
 
-    public int Logical_Input_Test(int target_int){
+    public int Logical_Input_Test(int target_max){
         int int_result = -1;
         //method gets called several times, setting the default result to -1 prevents logical errors
         //f.e. user can't choose negative amount of players, game mode
         try{
-           if (int_result < target_int){
+           if (int_result > target_max || int_result < 0){
                 int_result = Inquire_Console_Input();
             }
         }
@@ -122,7 +158,7 @@ Gebe gewuenschten Schwierigkeitsgrad an.
         //*Logical Input Test = LIT*
         //**************************
 
-        //Calling Logical_Input_Test with a certain target in
+        //Calling Logical_Input_Test with a certain target int
         //==>Raw input handled by Console_Inquiry
         //==>Logical input test handled by  LIT
         return player_count;
@@ -136,9 +172,9 @@ Gebe gewuenschten Schwierigkeitsgrad an.
         target_range.add(0,5);
         //game modes are defined by us
 
-        int difficulty = Logical_Input_Test(0);
+        int difficulty = Logical_Input_Test(5);
         while (target_range.contains(difficulty) != true){
-            difficulty = Logical_Input_Test(0);
+            difficulty = Logical_Input_Test(5);
         }
         //check if chosen difficulty exists, repeat Input if incorrect
         return difficulty;
@@ -161,10 +197,10 @@ Gebe gewuenschten Schwierigkeitsgrad an.
         }
         //Print available languages
 
-        int lang_int = Logical_Input_Test(0);
+        int lang_int = Logical_Input_Test(2);
         lang_codes.listIterator(i);
         while (lang_int - 1 > i){
-            lang_int = Logical_Input_Test(0);
+            lang_int = Logical_Input_Test(2);
         }
         // Get chosen language and make sure it's in range
 
