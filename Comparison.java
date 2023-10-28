@@ -50,7 +50,7 @@ public class Comparison {
                 }
 
                 catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
-        }
+            }
         }
 
     // ************
@@ -72,11 +72,14 @@ public class Comparison {
         int match_tracker = 0;
         try{
             for (int i = 0; i < win_condition; ++i){
-                // if (Comp_Down(game_tui, player_num, win_condition, row, coloumn, i)         == true){
-                //     ++match_tracker;
-                // }
+                if (Comp_Down(game_tui, player_num, win_condition, row, coloumn, i)         == true){
+                    ++match_tracker;
+                }
+                // If first comparison is successful, following comparisons are to be ignored
+                // It is now 2 in the morning
+                // I'm out of ciggies
 
-                if(Comp_Left(game_tui, player_num, win_condition, row, coloumn, i)         == true){
+                else if(Comp_Left(game_tui, player_num, win_condition, row, coloumn, i)         == true){
                     ++match_tracker;
                 }
                  
