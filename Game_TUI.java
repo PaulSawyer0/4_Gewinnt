@@ -165,7 +165,7 @@ Es ist Spieler: """;
         return player_count;
     }
 
-    public int Inquire_Difficulty(){
+    public int Inquire_Difficulty(Game_TUI game_tui){
         ArrayList<Integer> target_range = new ArrayList<Integer>();
 
         target_range.add(0,3);
@@ -208,8 +208,8 @@ Es ist Spieler: """;
         return lang_int;
     }
 
-    public void Print_Greeting(int lang){
-        switch(lang){
+    public void Print_Greeting(Game_TUI game_tui){
+        switch(game_tui.lang_int){
             case 1:
                 System.out.println(welcome_ENG);
                 break;
@@ -221,8 +221,8 @@ Es ist Spieler: """;
         }
     }
 
-    public void Print_Instructions(int lang){
-        switch(lang){
+    public void Print_Instructions(Game_TUI game_tui){
+        switch(game_tui.lang_int){
             case 1:
                 System.out.println(instruction_ENG);
                 break;
@@ -235,12 +235,13 @@ Es ist Spieler: """;
     }
 
     public void Game_TUI_Catalyst(Game_TUI game_tui){
-        int lang = game_tui.Inquire_Language();
-        game_tui.Print_Greeting(lang);
-        game_tui.Print_Instructions(lang);
-        int difficulty = Inquire_Difficulty();
-        game_tui.game_board.Game_Board_Config(game_tui, difficulty);
+        game_tui.lang_int = game_tui.Inquire_Language();
+        game_tui.Print_Greeting(game_tui);
+        game_tui.Print_Instructions(game_tui);
+        game_tui.difficulty = Inquire_Difficulty(game_tui);
+        game_tui.game_board.Game_Board_Config(game_tui);
         game_tui.game_board.Initialize_Empty_Board(game_tui);
+        game_tui.player_list.Generate_Player_List(2);
     }
 
 }

@@ -80,15 +80,13 @@ public class Comparison {
     }
 
     public void Match_Tracker_Test(Game_TUI game_tui, int match_tracker, int player_num){
-                if (match_tracker == game_tui.game_board.win_condition){
-                    // Call Winner_Notificatin method
-                    // ==> end of game
-                    System.out.println("\nSUCCESS");
-                }
+        if (match_tracker == game_tui.game_board.win_condition){
+            game_tui.game_board.match_over = true;
+        }
     }
 
     public void Comp_Loop(Game_TUI game_tui, int player_num, int direction){
-        // This method is the reason why my Github repo is set on private
+        // This method is the reason why my Github repo is set to private
         // Iterate through rows, coloumns for current direction
         for (int row = 0; row < game_tui.game_board.map.size(); ++row){
             // Iterate through rows
@@ -189,12 +187,12 @@ public class Comparison {
         Comp_Loop(game_tui, player_num, direction);
     }
 
-    public void Comp_Upper_Left(Game_TUI game_tui, int player_num, in){
+    public void Comp_Upper_Left(Game_TUI game_tui, int player_num){
         int direction = 6;
         Comp_Loop(game_tui, player_num, direction);
     }
     
-    public void Comp_Upper_Right(Game_TUI game_tui, int player_num, in){
+    public void Comp_Upper_Right(Game_TUI game_tui, int player_num){
         int direction = 7;
         Comp_Loop(game_tui, player_num, direction);
     }

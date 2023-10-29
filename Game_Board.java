@@ -10,6 +10,7 @@ public class Game_Board {
     int length;
     int width;
     int win_condition;
+    boolean match_over; 
     
     // *************
     // *Composition*
@@ -21,11 +22,26 @@ public class Game_Board {
     public Game_Board(){
         this.comp = new Comparison();
         this.input = new Input();
+        this.match_over = false;
     }
 
-    public void Game_Board_Config(Game_TUI game_tui, int input){
+    public void Winner_Notification(Game_TUI game_tui){
+        switch (game_tui.lang_int) {
+            case 1:
+                System.out.println("\nCongratulations, you have won!");
+                break;
+        
+            case 2:
+                System.out.println("\nGratuliere, sie haben gewonnen!");
+                break;
+            default:
+                break;
+        }
+
+    }
+    public void Game_Board_Config(Game_TUI game_tui){
         // Set width, length of map
-        switch (input) {
+        switch (game_tui.difficulty) {
             case 3:
                 game_tui.game_board.length = 4;
                 game_tui.game_board.width = 5;
