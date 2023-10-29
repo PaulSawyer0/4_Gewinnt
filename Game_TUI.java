@@ -130,6 +130,14 @@ Es ist Spieler: """;
         return in;
     }
 
+        //************************** 
+        //*Logical Input Test = LIT*
+        //**************************
+
+        //Calling Logical_Input_Test with a certain target int
+        //==>Raw input handled by Console_Inquiry
+        //==>Logical input test handled by  LIT
+        
     public int Logical_Input_Test(int target_max){
         int int_result = -1;
         //method gets called several times, setting the default result to -1 prevents logical errors
@@ -154,13 +162,6 @@ Es ist Spieler: """;
         //Might be expanded at later development stages
         int player_count = Logical_Input_Test(2);
 
-        //************************** 
-        //*Logical Input Test = LIT*
-        //**************************
-
-        //Calling Logical_Input_Test with a certain target int
-        //==>Raw input handled by Console_Inquiry
-        //==>Logical input test handled by  LIT
         return player_count;
     }
 
@@ -233,11 +234,13 @@ Es ist Spieler: """;
         }
     }
 
-    public void Game_TUI_Catalyst(){
-        int lang = Inquire_Language();
-        Print_Greeting(lang);
-        Print_Instructions(lang);
+    public void Game_TUI_Catalyst(Game_TUI game_tui){
+        int lang = game_tui.Inquire_Language();
+        game_tui.Print_Greeting(lang);
+        game_tui.Print_Instructions(lang);
         int difficulty = Inquire_Difficulty();
+        game_tui.game_board.Game_Board_Config(game_tui, difficulty);
+        game_tui.game_board.Initialize_Empty_Board(game_tui);
     }
 
 }

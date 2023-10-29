@@ -3,17 +3,17 @@ import java.util.List;
 
 public class Input {
     
-    public int Choose_Coloumn(Game_TUI game_tui, int width){
+    public int Choose_Coloumn(Game_TUI game_tui){
         // Let player choose target coloumn
         // output will be corrected (to accommodate for previous visual improvement->list starts at 1)
         int coloumn= -1;
 
-        game_tui.game_board.Print_Coloumn_Header(width);
+        game_tui.game_board.Print_Coloumn_Header(game_tui.game_board.width);
         game_tui.game_board.Print_Row_Coloumn(game_tui);
 
-        while (coloumn < 0 || coloumn > width - 1){
+        while (coloumn < 0 || coloumn > game_tui.game_board.width - 1){
             // While loop ensures that chosen row is within range
-            coloumn = game_tui.Logical_Input_Test(width) - 1;
+            coloumn = game_tui.Logical_Input_Test(game_tui.game_board.width) - 1;
             }        
 
         return coloumn;

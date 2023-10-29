@@ -66,7 +66,8 @@ public class Comparison {
         // 7   =   Compare Upper Right
 
     public void Compare_Stones(Game_TUI game_tui, int player_num, int win_condition){
-        //Get head clas Game_TUI, needed number of matching stones to win
+        // For each comparison, a new iteration of rows, coloumns is started
+
         Comp_Down(game_tui, player_num, win_condition);
         Comp_Left(game_tui, player_num, win_condition);
         Comp_Right(game_tui, player_num, win_condition);
@@ -77,7 +78,14 @@ public class Comparison {
 
         
     }
-
+    
+    public void Match_Tracker_Test(int match_tracker, int win_condition, int player_num){
+                if (match_tracker == win_condition){
+                    // Call Winner_Notificatin method
+                    // ==> end of game
+                    System.out.println("\nSUCCESS");
+                }
+    }
 
     public void Comp_Loop(Game_TUI game_tui, int player_num, int win_condition, int direction){
         // This method is the reason why my Github repo is set on private
@@ -145,7 +153,8 @@ public class Comparison {
                                     }
                                     break;
                             }
-                        Match_Tracker_Test(match_tracker, win_condition);
+                            
+                            Match_Tracker_Test(match_tracker, win_condition, player_num);
                         }
                         catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
                     }
@@ -190,11 +199,4 @@ public class Comparison {
         Comp_Loop(game_tui, player_num, win_condition, direction);
     }
 
-    public void Match_Tracker_Test(int match_tracker, int win_condition){
-                if (match_tracker == win_condition){
-                    // Call Winner_Notificatin method
-                    // ==> end of game
-                    System.out.println("\nSUCCESS");
-                }
-    }
 }
