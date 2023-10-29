@@ -16,7 +16,7 @@ public class Comparison {
 
             for (int target_pos : row.coloumns){
                 ++coloumn_tracker;
-                Compare_Down(game_tui, row_tracker, coloumn_tracker, 1, 3, 0);
+                Compare_Down(game_tui, row_tracker, coloumn_tracker, player_num, win_condition, coloumn_tracker);
 
             }
 
