@@ -8,7 +8,7 @@ public class Input {
         // output will be corrected (to accommodate for previous visual improvement->list starts at 1)
         int coloumn= -1;
 
-        game_tui.game_board.Print_Coloumn_Header(game_tui.game_board.width);
+        game_tui.game_board.Print_Coloumn_Header(game_tui);
         game_tui.game_board.Print_Row_Coloumn(game_tui);
 
         while (coloumn < 0 || coloumn > game_tui.game_board.width - 1){

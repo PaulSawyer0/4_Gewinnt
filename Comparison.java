@@ -65,29 +65,29 @@ public class Comparison {
         // 6   =   Compare Upper Left
         // 7   =   Compare Upper Right
 
-    public void Compare_Stones(Game_TUI game_tui, int player_num, int win_condition){
+    public void Compare_Stones(Game_TUI game_tui, int player_num){
         // For each comparison, a new iteration of rows, coloumns is started
 
-        Comp_Down(game_tui, player_num, win_condition);
-        Comp_Left(game_tui, player_num, win_condition);
-        Comp_Right(game_tui, player_num, win_condition);
-        Comp_Lower_Left(game_tui, player_num, win_condition);
-        Comp_Lower_Right(game_tui, player_num, win_condition);
-        Comp_Upper_Left(game_tui, player_num, win_condition);
-        Comp_Upper_Right(game_tui, player_num, win_condition);
+        Comp_Down(game_tui, player_num);
+        Comp_Left(game_tui, player_num);
+        Comp_Right(game_tui, player_num);
+        Comp_Lower_Left(game_tui, player_num);
+        Comp_Lower_Right(game_tui, player_num);
+        Comp_Upper_Left(game_tui, player_num);
+        Comp_Upper_Right(game_tui, player_num);
 
         
     }
-    
-    public void Match_Tracker_Test(int match_tracker, int win_condition, int player_num){
-                if (match_tracker == win_condition){
+
+    public void Match_Tracker_Test(Game_TUI game_tui, int match_tracker, int player_num){
+                if (match_tracker == game_tui.game_board.win_condition){
                     // Call Winner_Notificatin method
                     // ==> end of game
                     System.out.println("\nSUCCESS");
                 }
     }
 
-    public void Comp_Loop(Game_TUI game_tui, int player_num, int win_condition, int direction){
+    public void Comp_Loop(Game_TUI game_tui, int player_num, int direction){
         // This method is the reason why my Github repo is set on private
         // Iterate through rows, coloumns for current direction
         for (int row = 0; row < game_tui.game_board.map.size(); ++row){
@@ -96,7 +96,7 @@ public class Comparison {
                 for (int coloumn = 0; coloumn < game_tui.game_board.map.get(coloumn).coloumns.size(); ++coloumn){
                     // Iterate through coloumns
                     int match_tracker = 0;                
-                    for (int i = 0; i < win_condition; ++i){
+                    for (int i = 0; i < game_tui.game_board.win_condition; ++i){
                         int result = 0;
                         try{
                             switch (direction) {
@@ -154,7 +154,7 @@ public class Comparison {
                                     break;
                             }
                             
-                            Match_Tracker_Test(match_tracker, win_condition, player_num);
+                            Match_Tracker_Test(game_tui, match_tracker, player_num);
                         }
                         catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
                     }
@@ -164,39 +164,39 @@ public class Comparison {
         }
     }
 
-    public void Comp_Down(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Down(Game_TUI game_tui, int player_num){
         int direction = 1;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
 
-    public void Comp_Left(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Left(Game_TUI game_tui, int player_num){
         int direction = 2;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
     
-    public void Comp_Right(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Right(Game_TUI game_tui, int player_num){
         int direction = 3;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
     
-    public void Comp_Lower_Left(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Lower_Left(Game_TUI game_tui, int player_num){
         int direction = 4;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
     
-    public void Comp_Lower_Right(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Lower_Right(Game_TUI game_tui, int player_num){
         int direction = 5;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
 
-    public void Comp_Upper_Left(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Upper_Left(Game_TUI game_tui, int player_num, in){
         int direction = 6;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
     
-    public void Comp_Upper_Right(Game_TUI game_tui, int player_num, int win_condition){
+    public void Comp_Upper_Right(Game_TUI game_tui, int player_num, in){
         int direction = 7;
-        Comp_Loop(game_tui, player_num, win_condition, direction);
+        Comp_Loop(game_tui, player_num, direction);
     }
 
 }

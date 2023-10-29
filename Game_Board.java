@@ -9,6 +9,7 @@ public class Game_Board {
     ArrayList<Row> map = new ArrayList<Row>();
     int length;
     int width;
+    int win_condition;
     
     // *************
     // *Composition*
@@ -28,16 +29,19 @@ public class Game_Board {
             case 3:
                 game_tui.game_board.length = 4;
                 game_tui.game_board.width = 5;
+                game_tui.game_board.win_condition = 3;
                 break;
         
             case 4:
                 game_tui.game_board.length = 5;
                 game_tui.game_board.width = 6;
+                game_tui.game_board.win_condition = 3;
                 
                 break;
             case 5:
                 game_tui.game_board.length = 6;
                 game_tui.game_board.width = 7;
+                game_tui.game_board.win_condition = 3;
                 
                 break;
             default:
@@ -60,15 +64,15 @@ public class Game_Board {
         }
     }
 
-    public void Print_Coloumn_Header(int width){
+    public void Print_Coloumn_Header(Game_TUI game_tui){
 
-        for (int a = 1; a <= width; ++a){
-            if (a < width){
+        for (int a = 1; a <= game_tui.game_board.width; ++a){
+            if (a < game_tui.game_board.width){
                 System.out.print("| " + a  + " ");
                 // Print first - second to last coloumn
             }
 
-            else if (a == width) {
+            else if (a == game_tui.game_board.width) {
                 System.out.print("| " + a + " |");
                 // Print last coloumn
             }
