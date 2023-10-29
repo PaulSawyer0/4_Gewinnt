@@ -3,7 +3,8 @@ public class Comparison {
     public void Compare_Stones(Game_TUI game_tui, int player_num, int win_condition){
         //Get head clas Game_TUI, needed number of matching stones to win
         Comp_Down(game_tui, player_num, win_condition);
-        Comp_Left(game_tui, player_num, win_condition);
+        // Comp_Left(game_tui, player_num, win_condition);
+        Comp_Right(game_tui, player_num, win_condition);
 
         // ********************
         // *Rework in Progress*
@@ -23,56 +24,143 @@ public class Comparison {
         
     }
 
-    public void Comp_Down(Game_TUI game_tui, int player_num, int win_condition){
+
+    public void Comp_Loop(Game_TUI game_tui, int player_num, int win_condition, int direction){
+        // This method is the reason why my Github repo is set on private
+        // Iterate through rows, coloumns for current direction
         for (int row = 0; row < game_tui.game_board.map.size(); ++row){
+            // Iterate through rows
             try{
                 for (int coloumn = 0; coloumn < game_tui.game_board.map.get(coloumn).coloumns.size(); ++coloumn){
-                    int match_tracker = 0;
+                    // Iterate through coloumns
+                    int match_tracker = 0;                
                     for (int i = 0; i < win_condition; ++i){
+                        int result = 0;
                         try{
-                            int result =  game_tui.game_board.map.get(row + i).coloumns.get(coloumn);
-                            if (result == player_num){
-                                // Iterate 'down' rows
-                            System.out.println(result);
-                            ++match_tracker;
-                            Match_Tracker_Test(match_tracker, win_condition);
-                        }
-
-                        
+                            switch (direction) {
+                                // Putting the comparison into another method would take 8 parameters to achieve
+                                // in current state
+                                // Nuh uh
+                                case 1:
+                                    // Compare down
+                                    result =  game_tui.game_board.map.get(row + i).coloumns.get(coloumn);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                                
+                                case 2:
+                                    // Compare left
+                                    result =  game_tui.game_board.map.get(row).coloumns.get(coloumn - i);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                                case 3:
+                                    // Compare right
+                                    result =  game_tui.game_board.map.get(row).coloumns.get(coloumn + i);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                                case 4:
+                                    // Compare lower left
+                                    result =  game_tui.game_board.map.get(row + i).coloumns.get(coloumn - i);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                                case 5:
+                                    // Compare lower right
+                                    result =  game_tui.game_board.map.get(row + i).coloumns.get(coloumn + i);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                                case 6:
+                                    // Compare upper left
+                                    result =  game_tui.game_board.map.get(row - i).coloumns.get(coloumn - i);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                                case 7:
+                                    // Compare upper right
+                                    result =  game_tui.game_board.map.get(row - i).coloumns.get(coloumn + i);
+                                    if (result == player_num){
+                                        ++match_tracker;
+                                    }
+                                    break;
+                            }
+                        Match_Tracker_Test(match_tracker, win_condition);
                         }
                         catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
+                    }
                 }
             }
-        }
             catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
         }
     }
+
+    public void Comp_Down(Game_TUI game_tui, int player_num, int win_condition){
+        int direction = 1;
+        Comp_Loop(game_tui, player_num, win_condition, direction);
+    }
+        // for (int row = 0; row < game_tui.game_board.map.size(); ++row){
+        //     try{
+        //         for (int coloumn = 0; coloumn < game_tui.game_board.map.get(coloumn).coloumns.size(); ++coloumn){
+        //             int match_tracker = 0;
+        //             for (int i = 0; i < win_condition; ++i){
+        //                 try{
+        //                     int result =  game_tui.game_board.map.get(row + i).coloumns.get(coloumn);
+        //                     if (result == player_num){
+        //                         // Iterate 'down' rows
+        //                     System.out.println(result);
+        //                     ++match_tracker;
+        //                     Match_Tracker_Test(match_tracker, win_condition);
+        //                 }
+
+                        
+        //                 }
+        //                 catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
+        //         }
+        //     }
+        // }
+        //     catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
+        // }
 
     public void Comp_Left(Game_TUI game_tui, int player_num, int win_condition){
-        for (int row = 0; row < game_tui.game_board.map.size(); ++row){
-            try{
-                for (int coloumn = 0; coloumn < game_tui.game_board.map.get(coloumn).coloumns.size(); ++coloumn){
-                    int match_tracker = 0;
-                    for (int i = 0; i < win_condition; ++i){
-                        try{
-                            int result =  game_tui.game_board.map.get(row).coloumns.get(coloumn - i);
-                            if (result == player_num){
-                                // Iterate 'down' rows
-                            System.out.println(result);
-                            ++match_tracker;
-                            Match_Tracker_Test(match_tracker, win_condition);
-                        }
+        int direction = 2;
+        Comp_Loop(game_tui, player_num, win_condition, direction);
+    }
+    
+    public void Comp_Right(Game_TUI game_tui, int player_num, int win_condition){
+        int direction = 3;
+        Comp_Loop(game_tui, player_num, win_condition, direction);
+    }
+        // for (int row = 0; row < game_tui.game_board.map.size(); ++row){
+        //     try{
+        //         for (int coloumn = 0; coloumn < game_tui.game_board.map.get(coloumn).coloumns.size(); ++coloumn){
+        //             int match_tracker = 0;
+        //             for (int i = 0; i < win_condition; ++i){
+        //                 try{
+        //                     int result =  game_tui.game_board.map.get(row).coloumns.get(coloumn - i);
+        //                     if (result == player_num){
+        //                         // Iterate 'down' rows
+        //                     System.out.println(result);
+        //                     ++match_tracker;
+        //                     Match_Tracker_Test(match_tracker, win_condition);
+        //                 }
 
                         
-                        }
-                        catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
-                }
-            }
-        }
-            catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
-        }
+        //                 }
+        //                 catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
+        //         }
+        //     }
+        // }
+        //     catch (java.lang.IndexOutOfBoundsException OutOfBounds){}
+        // }
         // if we do have a match, return match = true
-    }
 
     public void Match_Tracker_Test(int match_tracker, int win_condition){
                 if (match_tracker == win_condition){
