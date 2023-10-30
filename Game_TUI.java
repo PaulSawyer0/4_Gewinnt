@@ -150,7 +150,7 @@ Es ist Spieler: """;
         // 
         catch(java.lang.NumberFormatException Input_Error) {
             System.out.println("Enter a number.");
-             int_result = Logical_Input_Test(0);
+             int_result = Logical_Input_Test(target_max);
             //If user input is not numerical ==> Repeat input
             //Nesting console input method in inquiry
         }

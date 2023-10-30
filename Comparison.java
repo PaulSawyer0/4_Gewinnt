@@ -6,7 +6,8 @@ public class Comparison {
 
         // |Why|
 
-        // Old approach didn't work. In previous commits I tried to implement comparison by looping through rows, coloumns
+        // Old approach didn't work.
+        // In previous commits I tried to implement comparison by looping through rows, coloumns
         // and calling adjacent comparison methods for each location.
         // Something kept messing with rows and coloumns, thus preventing every other comparison, except
         // the first one for some reason, to achieve a normal comparison.
