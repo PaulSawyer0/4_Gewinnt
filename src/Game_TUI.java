@@ -200,7 +200,7 @@ Es ist Spieler: """;
 
         int lang_int = Logical_Input_Test(2);
         lang_codes.listIterator(i);
-        while ((lang_int - 1) >= i && lang_int <= 0){
+        while (lang_int > lang_codes.size() || lang_int <= 0){
             lang_int = Logical_Input_Test(2);
         }
         // Get chosen language and make sure it's in range
