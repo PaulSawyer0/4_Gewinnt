@@ -27,6 +27,7 @@ public class Input {
         // output will be corrected (to accommodate for previous visual improvement->list starts at 1)
         // Coloumn automatically corrected (Subtracted by 1)
         int coloumn= -1;
+        System.out.println();
 
         while (coloumn < 0 || coloumn > game_tui.game_board.width - 1){
             // While loop ensures that chosen row is within range

@@ -19,6 +19,12 @@ public class Program {
 
         while (game_tui.game_board.match_over == false);
 
+        game_tui.game_board.Print_Coloumn_Header_Enclosure(game_tui);
+        game_tui.game_board.Print_Coloumn_Header(game_tui);
+        game_tui.game_board.Print_Coloumn_Header_Enclosure(game_tui);
+        game_tui.game_board.Print_Row_Coloumn(game_tui);
+        game_tui.game_board.Print_Coloumn_Header_Enclosure(game_tui);
+        
         game_tui.game_board.Winner_Notification(game_tui);
         try (Scanner scanner = new Scanner(System.in)) {
             scanner.nextLine();

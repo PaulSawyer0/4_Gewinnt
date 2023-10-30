@@ -26,6 +26,7 @@ public class Game_Board {
     }
 
     public void Winner_Notification(Game_TUI game_tui){
+        System.out.println();
         try{
         switch (game_tui.lang_int) {
             case 1:
@@ -79,8 +80,27 @@ public class Game_Board {
             map.add(new_row);
         }
     }
+    
+    public void Print_Coloumn_Header_Enclosure(Game_TUI game_tui){
+        // Shit's gotta look tight
+
+        System.out.println();
+        
+        for (int a = 1; a <= game_tui.game_board.width; ++a){
+            if (a < game_tui.game_board.width){
+                System.out.print("+---");
+                // Print first - second to last coloumn
+            }
+
+            else if (a == game_tui.game_board.width) {
+                System.out.print("+---+");
+                // Print last coloumn
+            }
+        }
+    }
 
     public void Print_Coloumn_Header(Game_TUI game_tui){
+        System.out.println();
 
         for (int a = 1; a <= game_tui.game_board.width; ++a){
             if (a < game_tui.game_board.width){

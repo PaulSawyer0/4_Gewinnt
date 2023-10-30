@@ -143,7 +143,7 @@ Es ist Spieler: """;
         //method gets called several times, setting the default result to -1 prevents logical errors
         //f.e. user can't choose negative amount of players, game mode
         try{
-           if (int_result > target_max || int_result < 0){
+           if (int_result > target_max || int_result <= 0){
                 int_result = Inquire_Console_Input();
             }
         }
@@ -200,7 +200,7 @@ Es ist Spieler: """;
 
         int lang_int = Logical_Input_Test(2);
         lang_codes.listIterator(i);
-        while ((lang_int - 1) >= i){
+        while ((lang_int - 1) >= i && lang_int <= 0){
             lang_int = Logical_Input_Test(2);
         }
         // Get chosen language and make sure it's in range
@@ -245,5 +245,4 @@ Es ist Spieler: """;
         game_tui.game_board.Initialize_Empty_Board(game_tui);
         game_tui.player_list.Generate_Player_List(2);
     }
-
 }
