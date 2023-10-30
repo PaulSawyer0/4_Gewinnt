@@ -200,7 +200,7 @@ Es ist Spieler: """;
 
         int lang_int = Logical_Input_Test(2);
         lang_codes.listIterator(i);
-        while (lang_int - 1 > i){
+        while ((lang_int - 1) >= i){
             lang_int = Logical_Input_Test(2);
         }
         // Get chosen language and make sure it's in range
@@ -222,6 +222,7 @@ Es ist Spieler: """;
     }
 
     public void Print_Instructions(Game_TUI game_tui){
+        try{
         switch(game_tui.lang_int){
             case 1:
                 System.out.println(instruction_ENG);
@@ -229,9 +230,9 @@ Es ist Spieler: """;
             case 2:
                 System.out.println(instruction_GER);
                 break;
-            default:
-            throw new ArithmeticException("Language not defined");
+            }
         }
+        catch(java.lang.ArithmeticException LangNotDefined){}
     }
 
     public void Game_TUI_Catalyst(Game_TUI game_tui){
