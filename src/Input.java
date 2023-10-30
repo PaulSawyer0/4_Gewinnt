@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Input {
     
     public void Check_Available_Space(Game_TUI game_tui){
