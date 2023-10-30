@@ -85,9 +85,26 @@ public class Comparison {
         }
     }
 
+    ***********
+    *Comp_Loop*
+    ***********
+    
+    // +-------------------------------------------------------------+
+    // |This method is the reason why my Github repo is set to privat|
+    // +-------------------------------------------------------------+
+
+    // ==>Purpose:  Iterate through rows, coloumns for comparison direction
+
+    // +----------------------------------+
+    // |Try{...} catch(IndexOutOfBounds){}|
+    // +----------------------------------+
+
+    // necessary for row, iteration
+    // ===>f.e. Comp_Right at row 0, coloumn 0 tries to compare with non-existing value, since we left the map
+    // enablingfurther flow of comparison even if we went outisde map boundaries
+
+
     public void Comp_Loop(Game_TUI game_tui, int player_num, int direction){
-        // This method is the reason why my Github repo is set to private
-        // Iterate through rows, coloumns for current direction
         for (int row = 0; row < game_tui.game_board.map.size(); ++row){
             // Iterate through rows
             try{
