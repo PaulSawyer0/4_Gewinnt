@@ -10,5 +10,6 @@ public class Player{
         int coloumn = game_TUI.game_board.input.Choose_Coloumn(game_TUI);
         game_TUI.game_board.input.Update_Map(game_TUI, coloumn, player_num);
         game_TUI.game_board.comp.Compare_Stones(game_TUI, player_num);
+        game_TUI.game_board.input.Check_Available_Space(game_TUI);
     }
 }

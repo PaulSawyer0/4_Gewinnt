@@ -3,6 +3,28 @@ import java.util.List;
 
 public class Input {
     
+    public void Check_Available_Space(Game_TUI game_tui){
+        // If number of (pos != 0 ) == length * width
+        // ==> Board filled, ABORT GAME
+
+        int val_count = 0;
+        // Tracking values != 0
+
+        for (Row row : game_tui.game_board.map){
+            for (Integer value : row.coloumns){
+                if (value != 0){
+                    ++val_count;
+                }
+
+            }
+        }
+
+        if (val_count == (game_tui.game_board.length * game_tui.game_board.width)){
+            game_tui.game_board.match_over = true;
+        }
+
+    }
+
     public int Choose_Coloumn(Game_TUI game_tui){
         // Let player choose target coloumn
         // output will be corrected (to accommodate for previous visual improvement->list starts at 1)

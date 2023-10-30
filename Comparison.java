@@ -85,14 +85,11 @@ public class Comparison {
         }
     }
 
-    ***********
-    *Comp_Loop*
-    ***********
+    // ***********
+    // *Comp_Loop*
+    // ***********
     
-    // +-------------------------------------------------------------+
-    // |This method is the reason why my Github repo is set to privat|
-    // +-------------------------------------------------------------+
-
+    // This method is the reason why my Github repo is set to privat
     // ==>Purpose:  Iterate through rows, coloumns for comparison direction
 
     // +----------------------------------+
