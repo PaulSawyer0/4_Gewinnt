@@ -51,13 +51,13 @@ public class Game_Board {
             case 4:
                 game_tui.game_board.length = 5;
                 game_tui.game_board.width = 6;
-                game_tui.game_board.win_condition = 3;
+                game_tui.game_board.win_condition = 4;
                 
                 break;
             case 5:
                 game_tui.game_board.length = 6;
                 game_tui.game_board.width = 7;
-                game_tui.game_board.win_condition = 3;
+                game_tui.game_board.win_condition = 5;
                 
                 break;
             default:
