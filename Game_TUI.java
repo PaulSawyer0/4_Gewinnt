@@ -209,6 +209,7 @@ Es ist Spieler: """;
     }
 
     public void Print_Greeting(Game_TUI game_tui){
+        try{
         switch(game_tui.lang_int){
             case 1:
                 System.out.println(welcome_ENG);
@@ -216,9 +217,9 @@ Es ist Spieler: """;
             case 2:
                 System.out.println(welcome_GER);
                 break;
-            default:
-            throw new ArithmeticException("Language not defined");
         }
+    }
+    catch(java.lang.ArithmeticException LangNotDefined){}
     }
 
     public void Print_Instructions(Game_TUI game_tui){

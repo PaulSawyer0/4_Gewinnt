@@ -26,6 +26,7 @@ public class Game_Board {
     }
 
     public void Winner_Notification(Game_TUI game_tui){
+        try{
         switch (game_tui.lang_int) {
             case 1:
                 System.out.println("\nCongratulations, you have won!");
@@ -34,10 +35,9 @@ public class Game_Board {
             case 2:
                 System.out.println("\nGratuliere, sie haben gewonnen!");
                 break;
-            default:
-                break;
         }
-
+    }
+        catch( java.lang.ArithmeticException LangNotDefined){}
     }
     public void Game_Board_Config(Game_TUI game_tui){
         // Set width, length of map
