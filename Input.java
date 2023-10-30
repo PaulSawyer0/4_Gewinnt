@@ -28,6 +28,7 @@ public class Input {
     public int Choose_Coloumn(Game_TUI game_tui){
         // Let player choose target coloumn
         // output will be corrected (to accommodate for previous visual improvement->list starts at 1)
+        // Coloumn automatically corrected (Subtracted by 1)
         int coloumn= -1;
 
         while (coloumn < 0 || coloumn > game_tui.game_board.width - 1){
@@ -39,9 +40,12 @@ public class Input {
     }
     
     public void Update_Map(Game_TUI game_tui,int target_coloumn, int player_num){
-        int size = game_tui.game_board.map.size() - 1;
+        int length = game_tui.game_board.length - 1;
+        // When we used the length attribute for map length reference,
+        // we started out iteration for config at 0, NOT AT 1
+        // Subtract 1 from length to get accurate length of map
         
-        for (int b = size; size - b != size; --b){
+        for (int b = length; (length - b) <= length; --b){
             // iterate rows in reverse
             
             if (game_tui.game_board.map.get(b).coloumns.get(target_coloumn) == 0){
