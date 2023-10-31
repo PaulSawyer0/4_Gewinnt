@@ -44,11 +44,11 @@ public class Player{
         try{
             switch (game_tui.lang_int) {
                 case 1:
-                    System.out.println("It's player's " + player_num + " turn");
+                    System.out.println(game_tui.take_turn_ENG + " " + player_num);
                     break;
             
                 case 2:
-                    System.out.println("Es ist Spieler " + player_num + " am Zug");
+                    System.out.println(game_tui.take_turn_DE + " " + player_num);
                     break;
                 default:
                     break;

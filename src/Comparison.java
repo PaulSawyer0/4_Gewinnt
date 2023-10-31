@@ -11,7 +11,7 @@ public class Comparison {
         // and calling adjacent comparison methods for each location.
         // Something kept messing with rows and coloumns, thus preventing every other comparison, except
         // the first one for some reason, to achieve a normal comparison.
-        // Now, each comparison starts its own iteration though rows and coloumns.
+        // Now, each comparison starts its own iteration through rows and coloumns.
         // Will still try to put the iteration process inside a method, to save some semblance
         // of OOP code.
 
@@ -99,7 +99,7 @@ public class Comparison {
 
     // necessary for row, iteration
     // ===>f.e. Comp_Right at row 0, coloumn 0 tries to compare with non-existing value, since we left the map
-    // enablingfurther flow of comparison even if we went outisde map boundaries
+    // enabling further flow of comparison even if we went outisde map boundaries
 
 
     public void Comp_Loop(Game_TUI game_tui, int player_num, int direction){
@@ -110,6 +110,7 @@ public class Comparison {
                     // Iterate through coloumns
                     int match_tracker = 0;                
                     for (int i = 0; i < game_tui.game_board.win_condition; ++i){
+                        // Iterate through number of matches needed for a win
                         int result = 0;
                         try{
                             switch (direction) {
