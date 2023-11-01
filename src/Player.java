@@ -1,5 +1,8 @@
 public class Player{
     public void Take_Turn(Game_TUI game_TUI, int player_num){
+        game_TUI.player_list.player_num = player_num;
+        // Set current player number attribute to current player number
+        
         // By calling this method with Game_TUI
         // we can call a plethora of other methods in different classes with same
         // parameter

@@ -30,11 +30,11 @@ public class Game_Board {
         try{
         switch (game_tui.lang_int) {
             case 1:
-                System.out.println("\nCongratulations, you have won!");
+                System.out.println("\nCongratulations player  " + game_tui.player_list.player_num + ", you have won!");
                 break;
         
             case 2:
-                System.out.println("\nGratuliere, sie haben gewonnen!");
+                System.out.println("\nGratuliere Spieler " + game_tui.player_list.player_num + ", sie haben gewonnen!");
                 break;
         }
     }
