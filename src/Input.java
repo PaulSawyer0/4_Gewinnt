@@ -12,12 +12,12 @@ public class Input {
                 if (value != 0){
                     ++val_count;
                 }
-
             }
         }
 
         if (val_count == (game_tui.game_board.length * game_tui.game_board.width)){
             game_tui.game_board.match_over = true;
+            game_tui.game_board.draw = true;
         }
 
     }

@@ -11,6 +11,7 @@ public class Game_Board {
     int width;
     int win_condition;
     boolean match_over; 
+    boolean draw;
     
     // *************
     // *Composition*
@@ -23,20 +24,34 @@ public class Game_Board {
         this.comp = new Comparison();
         this.input = new Input();
         this.match_over = false;
+        this.draw = false;
     }
 
     public void Winner_Notification(Game_TUI game_tui){
         System.out.println();
         try{
-        switch (game_tui.lang_int) {
-            case 1:
-                System.out.println("\nCongratulations player  " + game_tui.player_list.player_num + ", you have won!");
-                break;
-        
-            case 2:
-                System.out.println("\nGratuliere Spieler " + game_tui.player_list.player_num + ", sie haben gewonnen!");
-                break;
-        }
+            if (game_tui.game_board.draw == false){
+                switch (game_tui.lang_int) {
+                    case 1:
+                        System.out.println("\nCongratulations player  " + game_tui.player_list.player_num + ", you have won!");
+                        break;
+    
+                    case 2:
+                        System.out.println("\nGratuliere Spieler " + game_tui.player_list.player_num + ", sie haben gewonnen!");
+                        break;
+                }
+            }
+            else if(game_tui.game_board.draw == true){
+                switch (game_tui.lang_int) {
+                    case 1:
+                        System.out.println("\nIt's a draw!");
+                        break;
+    
+                    case 2:
+                        System.out.println("\nEs ist ein Unentschieden!");
+                        break;
+                }
+            }
     }
         catch( java.lang.ArithmeticException LangNotDefined){}
     }
