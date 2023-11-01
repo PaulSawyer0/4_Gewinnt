@@ -75,7 +75,7 @@ Schwer-5\n
 |Rules|
 +-----+\n
 1.  Every player receives a distinctive stone.
-2.  In each turn, a player places a stone in a certain row.
+2.  For each turn, a player places a stone in a certain row.
 3.  If a stone lands on another stone, it lands above it.
 4.  Depending on the chosen difficulty, a player has to achieve a certain matching symmetry for victory.
 5.  Placing a certain amount of matching stones horizontally, vertically or diagonally, qualifies as victory.
@@ -89,10 +89,10 @@ Enter desired difficulty.
 +------+\n
 1.  Jeder Spieler erhaelt einen einzigartigen Stein.
 2.  In jedem Zug platziert ein Spieler einen Stein in einer bestimmten Reihe.
-3.  Falls ein Stein auf einen anderen Stein landet, bleibt er ueber ihn.
-4.  Abhaengig von gewaehlter Schwierigkeitsstufe muss ein Spieler eine bestimmte Symmetriei fuer Gewinn erreichen.
+3.  Falls ein Stein auf einen anderen Stein landet, landet er ueber ihn.
+4.  Abhaengig von gewaehlter Schwierigkeitsstufe muss ein Spieler eine bestimmte Symmetrie fuer Gewinn erreichen.
 5.  Das Platzieren einer bestimmten Menge gleicher Steine auf horizontaler, vertikaler, diagonaler Ebene reicht fuer Sieg aus.
-6.  Falls keine freien Plaetze mehr im Spielbrett uebrig sein, endet das Spiel in unentschieden.  \n
+6.  Falls keine freien Plaetze mehr im Spielbrett uebrig sein, endet das Spiel mit unentschieden.  \n
 Gebe gewuenschten Schwierigkeitsgrad an.
                 """;       
 
