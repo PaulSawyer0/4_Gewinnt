@@ -5,14 +5,14 @@
 
 | Developers | Tasks                            |
 | ------     | ------                           |
-| Paul Bachmann        | Game                   |
-| Ansgar Richard Lang  | Comparison             |
-| Christoph Uebel      | Player_List, Player    |
-|Illia Tokarau         | Game_Board, Input      |
+| Paul Sawyer        | Game                   |
+| Paul Sawyer  | Comparison             |
+| Paul Sawyer      | Player_List, Player    |
+| Paul Sawyer         | Game_Board, Input      |
 
 | Various   |                   |
 | ------    | ------            |
 | Semester  | 3                 |
-| Maintainer    | T.Hoeppner    |
+| Maintainer    | Inapplicable    |
 | Ending on     | 1.11.2023     |
 | Language      | Java          |
